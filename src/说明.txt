@@ -1,0 +1,9 @@
+MapReducematrix.matrix 与 zhangying 是包 {{{2影的mapreduce程序
+
+zhangyingmahout 包是影的mahout程序 {{{2
+
+org.apache.hadoop.examples是我的mahout程序 {{{2
+
+其它说明 {{{2
+	数据抽样 与 多元线性回归 都用到了MapReducematrix.matrix
+	数据抽样 与 数据获取 都用到了zhangzhing包

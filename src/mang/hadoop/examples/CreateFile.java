@@ -5,7 +5,7 @@
  * 说明：参考一：http://blog.csdn.net/nodie/article/details/6386608 
  * 		 参考二：http://blog.csdn.net/nodie/article/details/6386586
  * */
-package org.apache.hadoop.examples;
+package mang.hadoop.examples;
 import java.util.Date;
 
 import org.apache.hadoop.conf.*;  

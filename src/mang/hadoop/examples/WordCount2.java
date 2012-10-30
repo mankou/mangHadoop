@@ -8,7 +8,7 @@
  *		右键该文件　运行　run as---run on hadoop　或者直接在工具栏点击相应的java　application名运行　
  * 
  * */
-package org.apache.hadoop.examples;
+package mang.hadoop.examples;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;

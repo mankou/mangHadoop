@@ -1,7 +1,14 @@
-/*
- * 用于测试的文件
+/**
+ * 功能：wordcount程序的改进，如不区分大小字与，对分隔符的自定义等．
+ * 说明：来自于hadoop实战书14页　pdf25页
+ * 使用：
+ *		先确保hdfs上没有　/user/root/output目录　如果有删除
+ *		把本地文件拷到　/user/root/input目录　如果有就不用拷了．可以在eclipse中用菜单上传，也可在linux下用hdfs命令上传
+ *		在run comfiguration中的新建java application　在　参数中填入　hdfs://202.201.1.42:9000/user/root/input hdfs://202.201.1.42:9000/user/root/output　　一个是输入路径一个是输出路径
+ *		右键该文件　运行　run as---run on hadoop　或者直接在工具栏点击相应的java　application名运行　
+ * 
  * */
-package org.apache.hadoop.examples;
+package mang.hadoop.examples;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -19,7 +26,7 @@ import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.util.ToolRunner;
 import org.apache.hadoop.fs.*;
 
-public class TestWordCountModify {
+public class WordCountModify {
 
   public static class TokenizerMapper 
        extends Mapper<Object, Text, Text, IntWritable>{
@@ -29,35 +36,6 @@ public class TestWordCountModify {
       
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
-    	//以下用于测试map过程中调用系统命令
-    	
-   /* 	String cmd="/bin/sh -c cp -r /home/maning/test/test1/* /home/maning/test/test2"; 
-		Runtime run = Runtime.getRuntime();//返回与当前 Java 应用程序相关的运行时对象 
-		try {
-			Process p = run.exec(cmd);// 启动另一个进程来执行命令   
-		} catch (IOException e) {
-			
-			e.printStackTrace();
-		}*/
-    	
-    	/*FsShell shell = new FsShell();
-        String[] argv = {"-cp","-r","/home/maning/test/test1/*","/home/maning/test/test2"};
-        
-        int res;
-        try {
-          try {
-			res = ToolRunner.run(shell, argv);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        } finally {
-          shell.close();
-        }*/
-    	
-    	
-		
-		//以上用于测试map过程中调用系统命令
     	
     	/*原始程序默认以空格为分隔符，现在加入其它的分隔符*/
 //    	StringTokenizer itr = new StringTokenizer(value.toString());
@@ -99,37 +77,8 @@ public class TestWordCountModify {
       System.err.println("Usage: wordcount <in> <out>");
       System.exit(2);
     }
-    //以下测试调用系统命令
-    
-//    String cmd="/bin/sh -c cp -r /home/maning/test/test1/* /home/maning/test/test2";
-   /* String cmd="/bin/sh -c ls";
-	Runtime run = Runtime.getRuntime();//返回与当前 Java 应用程序相关的运行时对象 
-	try {
-		Process p = run.exec(cmd);// 启动另一个进程来执行命令   
-	} catch (IOException e) {
-		
-		e.printStackTrace();
-	}*/
-    
-    FsShell shell = new FsShell();
-//    String[] argv = {"-cp","/home/maning/test/test1/source","/home/maning/test/test2"};
-//      String[] argv={"touch","/home/maning/test/test2/newfile"};
-    String[] argv = {"-ls","/home/hadoop/bin"};
-    
-    int res;
-    try {
-      res = ToolRunner.run(shell, argv);
-    } finally {
-      shell.close();
-    }
-//    System.exit(res);
-  
-    
-    
-    
-    //以上测试调用系统命令
     Job job = new Job(conf, "word count");
-    job.setJarByClass(TestWordCountModify.class);
+    job.setJarByClass(WordCountModify.class);
     job.setMapperClass(TokenizerMapper.class);
     job.setCombinerClass(IntSumReducer.class);
     job.setReducerClass(IntSumReducer.class);

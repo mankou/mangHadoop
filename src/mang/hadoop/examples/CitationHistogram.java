@@ -1,4 +1,4 @@
-package org.apache.hadoop.examples;
+package mang.hadoop.examples;
 
 import java.io.IOException;
 import java.util.Iterator;

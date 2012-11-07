@@ -30,9 +30,9 @@ public class DeleteFile {
 		try {
 
 			hdfs = FileSystem.get(conf);
-			System.out.println("create hdfs ok");
+			System.out.println("create hdfs ok");//用于测试
 			delef=new Path(deletePath);
-			System.out.println(delef.toString());
+//			System.out.println(delef.toString());//用于测试
 		} catch (Exception e) {
 			System.out.println(e.toString());
 		}
@@ -49,7 +49,7 @@ public class DeleteFile {
 		
 		
 		boolean isExists=hdfs.exists(delef);//判断文件是否存在
-		System.out.println("文件是否存在"+isExists);
+//		System.out.println("文件是否存在？"+isExists);//用于测试
 		if(isExists)
 		{
 			boolean isDeleted=hdfs.delete(delef, true);//递归删除，如果不是递归删除则第2个参数写 false

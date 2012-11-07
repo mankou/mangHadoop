@@ -1,7 +1,7 @@
 /*
  * 说明：用于在HDFS进行文件操作的，但没有成功，这里先不删除
  * */
-package mang.hadoop.test;
+package mang.hadoop.temp;
 
 import java.io.IOException;
 import java.util.ArrayList;

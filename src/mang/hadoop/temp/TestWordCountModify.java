@@ -1,7 +1,7 @@
 /*
  * 用于测试的文件
  * */
-package mang.hadoop.test;
+package mang.hadoop.temp;
 
 import java.io.IOException;
 import java.util.StringTokenizer;

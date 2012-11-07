@@ -28,9 +28,10 @@ public class CreateFile {
 			FSDataOutputStream dos = fs.create(new Path(
 					"/user/root/input/helloworld"));
 			String utf8 = "UTF-8";
-			dos.write("/r/n".getBytes(utf8));
-			dos.write("//ceshi//".getBytes(utf8));
-			dos.write("/r/n".getBytes(utf8));
+//			dos.write("/r/n".getBytes(utf8));
+//			dos.write("//ceshi//".getBytes(utf8));
+//			dos.write("/r/n".getBytes(utf8));
+			dos.write("hello world hello hadoop".getBytes(utf8));
 			Date dat = new Date();
 			dos.write(dat.toString().getBytes());
 			dos.close();

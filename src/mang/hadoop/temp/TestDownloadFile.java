@@ -5,7 +5,7 @@
  * 说明：参考一：http://blog.csdn.net/nodie/article/details/6386608 
  * 		 参考二：http://blog.csdn.net/nodie/article/details/6386586
  * */
-package mang.hadoop.test;
+package mang.hadoop.temp;
 import java.io.IOException;
 import java.util.Date;
 

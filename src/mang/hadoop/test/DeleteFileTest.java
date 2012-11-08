@@ -19,7 +19,7 @@ public class DeleteFileTest {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		String str=new String("HDFS://202.201.1.42:9000/user/root/output");
+		String str=new String("HDFS://202.201.1.42:9000/user/root/input/helloworld");
 		DeleteFile df=new DeleteFile(str);
 		df.delete();
 	}

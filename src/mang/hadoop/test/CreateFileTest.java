@@ -20,7 +20,7 @@ public class CreateFileTest {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		String filePath=new String("HDFS://202.201.1.42:9000/user/root/input/456");//要创建文件的路径 
+		String filePath=new String("HDFS://202.201.1.42:9000/user/root/input/helloworld");//要创建文件的路径 
 		String content=new String("hello world HELLO hadoop");//文件内容
 		CreateFile cf=new CreateFile(filePath, content);
 		cf.create();

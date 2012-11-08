@@ -57,7 +57,7 @@ public class CreateFile {
 		
 		dos.close();
 		
-		System.out.println("create file success");		
+		System.out.println("create file success HDFS path is "+filePath.toString());		
 		
 	}
 

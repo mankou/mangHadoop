@@ -37,8 +37,10 @@ public static void main(String[] args) throws Exception{
        
        String srcFile=new String("/user/root/input/helloworld");
 //       String dstFile=new String("/home/maning/test/helloworld.txt");
-       String dstFile=new String("/test/helloworld.txt");
+//       String dstFile=new String("/test/helloworld.txt");
+       String dstFile=new String("d:/helloworldmang");
        TestDownloadFile.getFromHdfs(srcFile, dstFile, configuration);
+       System.out.println("download success");
     }  
 
 
@@ -48,7 +50,7 @@ static boolean getFromHdfs(String src,String dst, Configuration conf) {
       // 获取操作hdfs的对象  
       FileSystem hdfs = dstPath.getFileSystem(conf);  
       // 下載  
-      hdfs.copyToLocalFile(true, new Path("hdfs://202.201.1.42:9000" +src),new Path(dst));  
+      hdfs.copyToLocalFile(false, new Path("hdfs://202.201.1.42:9000" +src),new Path(dst));  
         
     } catch (IOException e) {  
       e.printStackTrace();  

@@ -30,7 +30,7 @@ public class DeleteFile {
 		try {
 
 			hdfs = FileSystem.get(conf);
-			System.out.println("create hdfs ok");//用于测试
+//			System.out.println("create hdfs ok");//用于测试
 			delef=new Path(deletePath);
 //			System.out.println(delef.toString());//用于测试
 		} catch (Exception e) {

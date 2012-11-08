@@ -16,12 +16,12 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.hdfs.*;
 import org.apache.hadoop.fs.*;
 
-public class CopyOfCreateFile {
+public class CreateFile {
 	Configuration conf;
 	FileSystem fs;
 	Path filePath;
 	String content;
-	public CopyOfCreateFile(String filePath,String content) throws IOException{
+	public CreateFile(String filePath,String content) throws IOException{
 		conf = new Configuration();
 		fs = FileSystem.get(conf);
 		this.filePath=new Path(filePath);
@@ -70,7 +70,7 @@ public class CopyOfCreateFile {
 		}*/
 		String filePath=new String("HDFS://202.201.1.42:9000/user/root/input/456");
 		String content=new String("hello world");
-		CopyOfCreateFile cf=new CopyOfCreateFile(filePath, content);
+		CreateFile cf=new CreateFile(filePath, content);
 		cf.create();
 
 	}
